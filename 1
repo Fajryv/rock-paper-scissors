@@ -1,0 +1,34 @@
+import random
+
+def AI_vs_AI_battle():
+    ai1_score = 0
+    ai2_score = 0
+
+    while True:
+        ai1_move = random.choice(['rock', 'paper', 'scissors'])
+        ai2_move = random.choice(['rock', 'paper', 'scissors'])
+
+        if ai1_move == ai2_move:
+            print("It's a tie!")
+        elif (ai1_move == 'rock' and ai2_move == 'scissors') or \
+             (ai1_move == 'paper' and ai2_move == 'rock') or \
+             (ai1_move == 'scissors' and ai2_move == 'paper'):
+            print("AI 1 wins!")
+            ai1_score += 1
+        else:
+            print("AI 2 wins!")
+            ai2_score += 1
+
+        print("AI 1 score:", ai1_score)
+        print("AI 2 score:", ai2_score)
+        print()
+
+        if ai1_score >= 10 or ai2_score >= 10:
+            break
+
+    if ai1_score > ai2_score:
+        print("AI 1 is the ultimate winner!")
+    else:
+        print("AI 2 is the ultimate winner!")
+
+AI_vs_AI_battle()
